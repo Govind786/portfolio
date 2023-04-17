@@ -59,7 +59,7 @@ function Header() {
         <a href="/#skill">Skills</a>
       </li>
       <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-        <a href="/#educ">Education</a>
+        <a href="/#educ">Educations</a>
       </li>
       <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
         <a href="/#contacts">Contact Me</a>
