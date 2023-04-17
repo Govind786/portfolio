@@ -43,7 +43,7 @@ const rea = {
   width: "83%",
 };
 
-function Home() {
+function Header() {
   const [text, setText] = useState("");
   const [fullText] = useState(
     "And I love to create beautiful and efficient code. I am Computer Science and Engineering Undergraduate. I have a strong passion for coding and wanted to give my best in this field. I am a quick learner and good team player. I am looking for a job where I can serve my best and enhance my knowledge."
@@ -405,4 +405,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Header;
