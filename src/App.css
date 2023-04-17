@@ -1,0 +1,83 @@
+.gov-c:hover .gov {
+    visibility: visible;
+    justify-content: center;
+}
+
+.gov-c:hover .gov-img img {
+    transform: scale(1.2);
+}
+
+.mine:hover {
+    transform: scale(1.09);
+}
+
+.h-edu:hover .educate {
+    visibility: visible;
+    transform: scale(1.2);
+}
+
+#edu {
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.4%;
+}
+
+#contact {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.4%;
+}
+
+.form-me {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.achieve {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.4%;
+}
+
+.certi {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .mq-none {
+        display: none;
+    }
+
+    .mq-block {
+        display: flex;
+    }
+
+    ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    ul svg {
+        margin-left: 48%;
+    }
+
+    ul li {
+        margin: 8px 0px;
+        padding: 5px 0px;
+    }
+
+    .landing {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #edu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+    }
+  }
