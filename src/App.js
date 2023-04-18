@@ -5,11 +5,11 @@ import Header from "./Components/header";
 import Project from "./Components/project";
 import Achievement from "./Components/achievement";
 import Certificate from "./Components/certificate";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/certificate" element={<Certificate />}></Route>
       </Routes>
       <Fotter />
-    </Router>
+      </>
   );
 }
 
