@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="text-white">
       <ul className="fixed w-screen bg-black flex p-3 justify-center mq-none">
-        <a href="/">
+        <a href="/portfolio">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -93,7 +93,7 @@ function App() {
           </svg>
         </a>
         <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="/">Home</a>
+          <a href="/portfolio">Home</a>
         </li>
         <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
           <a href="#about">About</a>
