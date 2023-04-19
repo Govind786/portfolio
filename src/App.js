@@ -316,62 +316,82 @@ function App() {
         </div>
       </div>
       <hr />
-      <p id="educ" className="text-3xl pt-14 text-center font-bold bg-gray-700">
+      <p
+        id="educ"
+        className="text-3xl p-4 pt-14 text-center font-bold bg-gray-700"
+      >
         My Education
       </p>
-      <div id="edu" className="bg-gray-700 lg:p-8 lg:pl-14">
-        <div className="h-edu mx-8 text-center my-8 lg:my-0">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={sistec}
-            alt=""
-          />
+      <div className="flex bg-gray-700 justify-center edu-main">
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={sistec}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">Undergraduate</p>
           <p className="pb-2 font-bold text-xs">(2019 - Present)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
             Doing Bachelor of Technolohy in Computer Science & Engineering
             branch from Sagar Institute of Science, Technology & Research
             (SISTec-R), Bhopal with{" "}
             <span className="font-bold">(9.17 SGPA).</span>
           </p>
+          </div>
         </div>
-        <div className="mx-8 h-edu text-center my-8 lg:my-0">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={clry}
-            alt=""
-          />
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={clry}
+              alt=""
+            />
+          </div>
           <br />
-          <p className="font-bold text-xl">
-            12<sup>th</sup> Standard
-          </p>
+          <div>
+          <p className="font-bold text-xl">12<sup>th</sup> Standard</p>
           <p className="pb-2 font-bold text-xs">(2018 - 2019)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
             Done my Higher Secondary Education from C.L. Arya Science Higher
             Secondary School, M.P. with{" "}
             <span className="font-bold">(85.6%).</span>
           </p>
+          </div>
         </div>
-        <div className="mx-8 h-edu text-center my-8 lg:my-0">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={ops}
-            alt=""
-          />
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={ops}
+              alt=""
+            />
+          </div>
           <br />
-          <p className="font-bold text-xl">
-            10<sup>th</sup> Standard
-          </p>
+          <div>
+          <p className="font-bold text-xl">10<sup>th</sup> Standard</p>
           <p className="pb-2 font-bold text-xs">(2016 - 2017)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            Done my Higher Education from Oriental Public Higher Secondary
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          Done my Higher Education from Oriental Public Higher Secondary
             School, M.P. with <span className="font-bold">(88.83%).</span>
           </p>
+          </div>
         </div>
       </div>
       <hr />
-      <p id="projects" className="text-3xl lg:pt-14 pt-6 text-center font-bold bg-gray-700">
+      <p
+        id="projects"
+        className="text-3xl lg:pt-14 pt-6 text-center font-bold bg-gray-700"
+      >
         My Projects
       </p>
       <div id="project" className="bg-gray-700 lg:px-10 pt-6 pb-6">
@@ -506,99 +526,141 @@ function App() {
         </div>
       </div>
       <hr />
-      <p id="achievement" className="text-3xl lg:pt-14 pt-6 text-center font-bold bg-gray-700">
+      <p
+        id="educ"
+        className="text-3xl p-4 pt-14 text-center font-bold bg-gray-700"
+      >
         Achievements
       </p>
-      <div className="bg-gray-700 lg:p-8 lg:pl-14 achieve landing">
-        <div className="h-edu mx-8 text-center mb-10">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={sih}
-            alt=""
-          />
+      <div className="flex bg-gray-700 justify-center edu-main">
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={sih}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">SIH - 2022</p>
-          <p className="pb-2 font-bold text-s">(Finalist)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            We are the Runner up in Smart India Hackathon 2022 held by Govt. of
+          <p className="pb-2 font-bold text-xs">(Finalist)</p>
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          We are the Runner up in Smart India Hackathon 2022 held by Govt. of
             India. I was the Team Leader of my Team.
           </p>
+          </div>
         </div>
-        <div className="h-edu mx-8 text-center mb-10">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={manthan}
-            alt=""
-          />
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={manthan}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">Sagar Manthan - 2022</p>
-          <p className="pb-2 font-bold text-s">(Star Performer)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            Sagar Manthan 2022 was organised by Training & Placement Team of my
+          <p className="pb-2 font-bold text-xs">(Star Performer)</p>
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          Sagar Manthan 2022 was organised by Training & Placement Team of my
             college. I won the competition of Star performer of the event.
           </p>
+          </div>
         </div>
-        <div className="h-edu mx-8 text-center mb-10">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={master}
-            alt=""
-          />
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={master}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">Branch Master - 2022</p>
-          <p className="pb-2 font-bold text-s">(Winner)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            Branch Master was organused by CSE Department of my college and I
+          <p className="pb-2 font-bold text-xs">(Winner)</p>
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          Branch Master was organused by CSE Department of my college and I
             won the event.
           </p>
+          </div>
         </div>
       </div>
-      <div className="bg-gray-700 lg:p-8 lg:pl-14 achieve landing">
-        <div className="h-edu mx-8 text-center mb-10">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={ch5}
-            alt=""
-          />
+      <div className="flex bg-gray-700 justify-center edu-main">
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={ch5}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">Code Hunt 5.O - 2021</p>
-          <p className="pb-2 font-bold text-s">(Winner)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            Code Hunt 5.O is and inter-college coding competition held by Amity
+          <p className="pb-2 font-bold text-xs">(Winner)</p>
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          Code Hunt 5.O is and inter-college coding competition held by Amity
             University, U.P. and I secure the 1st position in competition.
           </p>
+          </div>
         </div>
-        <div className="h-edu mx-8 text-center mb-10">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={btop}
-            alt=""
-          />
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={btop}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">Branch Topper - 2023</p>
-          <p className="pb-2 font-bold text-s">(6th Semester Topper)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            I won the academic excellence award for branch topper of my college
+          <p className="pb-2 font-bold text-xs">(6th Semester Topper)</p>
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          I won the academic excellence award for branch topper of my college
             in Sixth Semester.
           </p>
+          </div>
         </div>
-        <div className="h-edu mx-8 text-center mb-10">
-          <img
-            className="h-52 w-80 p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
-            src={prastuti}
-            alt=""
-          />
+        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+          <div>
+            <img
+              className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
+              src={prastuti}
+              alt=""
+            />
+          </div>
           <br />
+          <div>
           <p className="font-bold text-xl">Prastuti - 2020</p>
-          <p className="pb-2 font-bold text-s">(2016 - 2017)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
-            Prastuti event was a Presentation show and explain competition in
+          <p className="pb-2 font-bold text-xs">(2016 - 2017)</p>
+          </div>
+          <div>
+          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+          Prastuti event was a Presentation show and explain competition in
             which I secure 3rd position.
           </p>
+          </div>
         </div>
       </div>
       <hr />
-      <p id="certificate" className="text-3xl pt-14 text-center font-bold bg-gray-700">
+      <p
+        id="certificate"
+        className="text-3xl p-4 pt-14 text-center font-bold bg-gray-700"
+      >
         Certificates
       </p>
       <div className="bg-gray-700 lg:p-12 lg:pl-14 certi landing">
@@ -661,7 +723,7 @@ function App() {
       <hr />
       <p
         id="contacts"
-        className="text-3xl pt-14 text-center font-bold bg-gray-700"
+        className="text-3xl p-4 pt-14 text-center font-bold bg-gray-700"
       >
         Contact Me
       </p>

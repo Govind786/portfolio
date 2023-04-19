@@ -11,15 +11,9 @@
     transform: scale(1.09);
 }
 
-.h-edu:hover .educate {
+.educate:hover .d-edu {
     visibility: visible;
-    transform: scale(1.2);
-}
-
-#edu {
-    padding-top: 60px;
-    display: grid;
-    grid-template-columns: 33.3% 33.3% 33.4%;
+    transform: scale(0.95);
 }
 
 #contact {
@@ -71,9 +65,11 @@
         flex-direction: column;
     }
 
-    #edu {
+    .edu-main {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #contact {
