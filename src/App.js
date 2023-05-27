@@ -12,6 +12,12 @@ import master from "./Branch_Master_1.jpg";
 import ch5 from "./codehunt.jpg";
 import btop from "./branch_1.jpg";
 import prastuti from "./prastuti.jpg";
+import criminal from "./criminal_detection.jpg";
+import visit from "./visit_india.jpg";
+import delivery from "./food_delivery.jpg";
+import innov from "./inniovative.jpg";
+import notes from "./notes.jpg";
+
 
 const c = {
   width: "75%",
@@ -398,7 +404,7 @@ function App() {
         <div className="flex text-center mb-14 relative landing">
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img
+            <img style={{height: "180px", width: "1000px"}}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={portfolio}
                 alt=""
@@ -418,9 +424,9 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img
+              <img style={{height: "180px", width: "1000px"}}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
-                src={portfolio}
+                src={criminal}
                 alt=""
               />
             </div>
@@ -440,9 +446,9 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img
+            <img style={{height: "180px", width: "1000px"}}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
-                src={portfolio}
+                src={visit}
                 alt=""
               />
             </div>
@@ -463,9 +469,9 @@ function App() {
         <div className="flex text-center mb-10 relative landing">
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img
+            <img style={{height: "180px", width: "1000px"}}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
-                src={portfolio}
+                src={delivery}
                 alt=""
               />
             </div>
@@ -484,9 +490,9 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img
+            <img style={{height: "180px", width: "1000px"}}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
-                src={portfolio}
+                src={innov}
                 alt=""
               />
             </div>
@@ -505,9 +511,9 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img
+            <img style={{height: "180px", width: "1000px"}}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
-                src={portfolio}
+                src={notes}
                 alt=""
               />
             </div>
@@ -665,17 +671,17 @@ function App() {
       </p>
       <div className="bg-gray-700 lg:p-12 lg:pl-14 certi landing">
         <div></div>
-        <div className="my-4 h-edu mx-8 text-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
+        <div className="my-4 mx-8 text-center educate shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
           <p className="font-bold text-xl">InfyTQ</p>
           <p className="pb-2 font-bold text-s">(Certification Round)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          <p className="px-10 transition duration-300 ease-in-out invisible d-edu text-xs">
             Qulify InfyTQ Certification Round of Infosys.
           </p>
         </div>
-        <div className="mx-8 my-4 h-edu text-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
+        <div className="mx-8 my-4 text-center educate shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
           <p className="font-bold text-xl">Cocubes Examination</p>
           <p className="pb-2 font-bold text-s">(551/800)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          <p className="px-10 d-edu transition duration-300 ease-in-out invisible educate text-xs">
             Qualify Cocubes Examination with 100% in Coding and 93% in Computer
             Fundamentals.
           </p>
@@ -684,18 +690,18 @@ function App() {
       </div>
       <div className="bg-gray-700 lg:p-12 lg:pl-14 certi landing">
         <div></div>
-        <div className="my-4 h-edu mx-8 text-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
+        <div className="my-4 mx-8 text-center educate shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
           <p className="font-bold text-xl">AMCAT Examination</p>
           <p className="pb-2 font-bold text-s">(99 percentile)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          <p className="px-10 d-edu transition duration-300 ease-in-out invisible educate text-xs">
             Qualify AMCAT Examination with 99 percentile in Computer
             Fundamentals.
           </p>
         </div>
-        <div className="h-edu mx-8 my-4 text-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
+        <div className="mx-8 my-4 text-center educate shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
           <p className="font-bold text-xl">SIH - 2022</p>
           <p className="pb-2 font-bold text-s">(Finalist)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          <p className="px-10 d-edu transition duration-300 ease-in-out invisible educate text-xs">
             We are the Runner up in Smart India Hackathon 2022 held by Govt. of
             India. I was the Team Leader of my Team.
           </p>
@@ -704,17 +710,17 @@ function App() {
       </div>
       <div className="bg-gray-700 pb-12 lg:p-12 lg:pl-14 certi landing">
         <div></div>
-        <div className="my-5 mx-8 h-edu text-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
+        <div className="my-5 mx-8 text-center educate shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
           <p className="font-bold text-xl">Code Jam</p>
           <p className="pb-2 font-bold text-s">(Round 1)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          <p className="px-10 d-edu transition duration-300 ease-in-out invisible educate text-xs">
             Qualify Code Jam (Round 1) of Google with 90 points.
           </p>
         </div>
-        <div className="mx-8 my-5 h-edu text-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
+        <div className="mx-8 my-5 text-center educate shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] p-6">
           <p className="font-bold text-xl">Internship demo - Edureka</p>
           <p className="pb-2 font-bold text-s">(Full Stack web development)</p>
-          <p className="px-10 text-justify transition duration-300 ease-in-out invisible educate text-xs">
+          <p className="px-10 d-edu transition duration-300 ease-in-out invisible educate text-xs">
             Attended Full Stack Web Development Program Demo Session by Edureka.
           </p>
         </div>
@@ -728,7 +734,7 @@ function App() {
         Contact Me
       </p>
       <div id="contact" className="bg-gray-700 p-10">
-        <div className="h-edu mx-8 lg:mx-20 text-center flex flex-col items-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] p-4 hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] mb-5">
+        <div className="mx-8 lg:mx-20 text-center flex flex-col items-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] p-4 hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] mb-5">
           <svg
             className="h-10 w-10 text-red-700"
             viewBox="0 0 24 24"
@@ -744,7 +750,7 @@ function App() {
           <p className="font-bold text-xl">Phone</p>
           <p className="pb-2 font-bold text-xs">+91 9074793605</p>
         </div>
-        <div className="h-edu mx-8 lg:mx-20 text-center flex flex-col items-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] p-4 hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] mb-5">
+        <div className="mx-8 lg:mx-20 text-center flex flex-col items-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] p-4 hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] mb-5">
           <svg
             className="h-10 w-10 text-red-700"
             viewBox="0 0 24 24"
@@ -760,7 +766,7 @@ function App() {
           <p className="font-bold text-xl">Email</p>
           <p className="pb-2 font-bold text-xs">govindkushwaha0786@gmail.com</p>
         </div>
-        <div className="h-edu mx-8 lg:mx-20 text-center flex flex-col items-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] p-4 hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] mb-5">
+        <div className="mx-8 lg:mx-20 text-center flex flex-col items-center shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] p-4 hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)] mb-5">
           <svg
             className="h-10 w-10 text-red-700"
             fill="none"
