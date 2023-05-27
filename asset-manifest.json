@@ -1,9 +1,13 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.7317efd1.css",
-    "main.js": "/portfolio/static/js/main.f218ff70.js",
+    "main.js": "/portfolio/static/js/main.c85e2d2c.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/food_delivery.jpg": "/portfolio/static/media/food_delivery.5d1dc5f517f3ecd67977.jpg",
     "static/media/mineshop.jpg": "/portfolio/static/media/mineshop.f01d399965e8639557e4.jpg",
+    "static/media/criminal_detection.jpg": "/portfolio/static/media/criminal_detection.53b853c423e801945b7f.jpg",
+    "static/media/notes.jpg": "/portfolio/static/media/notes.f5918c3ac3a3717cef7d.jpg",
+    "static/media/visit_india.jpg": "/portfolio/static/media/visit_india.ed951846be282722f46d.jpg",
     "static/media/Branch_Master_1.jpg": "/portfolio/static/media/Branch_Master_1.43ebc0020805d14622fb.jpg",
     "static/media/Sagar_Manthan_1.jpg": "/portfolio/static/media/Sagar_Manthan_1.6c47d6cafadf7a1be7c2.jpg",
     "static/media/codehunt.jpg": "/portfolio/static/media/codehunt.36002cae1d9fe4a65985.jpg",
@@ -11,16 +15,17 @@
     "static/media/sistec.png": "/portfolio/static/media/sistec.34cdd268d644209494f8.png",
     "static/media/branch_1.jpg": "/portfolio/static/media/branch_1.92cbdc8a8947c97e5cfb.jpg",
     "static/media/prastuti.jpg": "/portfolio/static/media/prastuti.4dcba15d9316894cda06.jpg",
+    "static/media/inniovative.jpg": "/portfolio/static/media/inniovative.89276aeadb016c2d2c00.jpg",
     "static/media/port.jpg": "/portfolio/static/media/port.e892f0ecd5059ad2a475.jpg",
     "static/media/ops.avif": "/portfolio/static/media/ops.bb61ca8db7da362fc442.avif",
     "static/media/minetable.jpeg": "/portfolio/static/media/minetable.88411057c70ff20f5441.jpeg",
     "index.html": "/portfolio/index.html",
     "main.7317efd1.css.map": "/portfolio/static/css/main.7317efd1.css.map",
-    "main.f218ff70.js.map": "/portfolio/static/js/main.f218ff70.js.map",
+    "main.c85e2d2c.js.map": "/portfolio/static/js/main.c85e2d2c.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7317efd1.css",
-    "static/js/main.f218ff70.js"
+    "static/js/main.c85e2d2c.js"
   ]
 }
