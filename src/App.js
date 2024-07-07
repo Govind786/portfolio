@@ -59,7 +59,7 @@ const rea = {
 function App() {
   const [text, setText] = useState("");
   const [fullText] = useState(
-    "And I love to create beautiful and efficient code. I am Computer Science and Engineering Undergraduate. I have a strong passion for coding and wanted to give my best in this field. I am a quick learner and good team player. I am looking for a job where I can serve my best and enhance my knowledge."
+    "And I love to create beautiful and efficient code. I am Computer Science and Engineering Graduate. I have a strong passion for coding and wanted to give my best in this field. I am a quick learner and good team player. I am looking for a job where I can serve my best and enhance my knowledge."
   );
   const [index, setIndex] = useState(0);
 
@@ -339,8 +339,8 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Undergraduate</p>
-          <p className="pb-2 font-bold text-xs">(2019 - Present)</p>
+          <p className="font-bold text-xl">B. Tech Graduate</p>
+          <p className="pb-2 font-bold text-xs">(2019 - 2023)</p>
           </div>
           <div>
           <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
