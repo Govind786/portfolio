@@ -5,7 +5,7 @@ import clry from "./clry.jpg";
 import ops from "./ops.avif";
 import portfolio from "./port.jpg";
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import sih from "./SIH_1.jpg";
 import manthan from "./Sagar_Manthan_1.jpg";
 import master from "./Branch_Master_1.jpg";
@@ -32,7 +32,7 @@ const java = {
   width: "45%",
 };
 const dart = {
-  width: "60%",
+  width: "80%",
 };
 const htc = {
   width: "95%",
@@ -73,6 +73,7 @@ function App() {
   });
 
   const [text2, setText2] = useState("");
+  console.log(text2, setText2);
   const [fullText2] = useState("Hello there, I am Govind.");
   const [index2, setIndex2] = useState(0);
 
@@ -85,9 +86,51 @@ function App() {
     }
   });
 
+  const [activeLink, setActiveLink] = useState('home');
+
+  const handleLinkClick = (linkName) => {
+    setActiveLink(linkName);
+  };
+
+  const links = useMemo(() => [
+    { name: 'home', label: 'Home' },
+    { name: 'about', label: 'About' },
+    { name: 'skill', label: 'Skills' },
+    { name: 'educ', label: 'Education' },
+    { name: 'projects', label: 'Projects' },
+    { name: 'achievement', label: 'Achievements' },
+    { name: 'certificate', label: 'Certificates' },
+    { name: 'contacts', label: 'Contact Me' },
+  ], []);
+
+  const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+
+    const offsets = links.reduce((acc, link) => {
+      const sectionOffset = document.getElementById(link.name).offsetTop;
+      return { ...acc, [link.name]: sectionOffset };
+    }, {});
+
+    const activeSection = Object.keys(offsets).find((section) => {
+      return scrollY >= offsets[section] && scrollY < offsets[section] + document.getElementById(section).clientHeight;
+    });
+
+    if (activeSection) {
+      setActiveLink(activeSection);
+    }
+  }, [links]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
-    <div className="text-white">
-      <ul className="fixed w-screen bg-black flex p-3 justify-center mq-none">
+    <div className="text-white relative">
+      <ul className="fixed w-screen bg-black flex p-3 justify-center mq-none z-50">
         <a href="/portfolio">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -98,30 +141,16 @@ function App() {
             <path d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61"></path>
           </svg>
         </a>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="/portfolio">Home</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#about">About</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#skill">Skills</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#educ">Educations</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#projects">Projects</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#achievement">Achievements</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#certificate">Certificates</a>
-        </li>
-        <li className="mx-3 px-2 text-white cursor-pointer font-bold hover:text-gray-400">
-          <a href="#contacts">Contact Me</a>
-        </li>
+        {links.map((link) => (
+          <li
+            key={link.name}
+            className={`mx-3 px-2 cursor-pointer font-bold hover:text-gray-500 ${link.name === activeLink ? 'text-gray-500' : 'text-white'
+              }`}
+            onClick={() => handleLinkClick(link.name)}
+          >
+            <a href={`#${link.name}`}>{link.label}</a>
+          </li>
+        ))}
       </ul>
       <nav
         id="home"
@@ -269,14 +298,14 @@ function App() {
             <div className="h-1 bg-white" style={ds}></div>
           </div>
           <br />
+          <p className="font-bold mb-2">Flutter (80%)</p>
+          <div className="w-[90vw] lg:w-full p-1 bg-black">
+            <div className="h-1 bg-white" style={dart}></div>
+          </div>
+          <br />
           <p className="font-bold mb-2">C/C++ Programming (75%)</p>
           <div className="w-[90vw] lg:w-full p-1 bg-black">
             <div className="h-1 bg-white" style={c}></div>
-          </div>
-          <br />
-          <p className="font-bold mb-2">Flutter Dart (60%)</p>
-          <div className="w-[90vw] lg:w-full p-1 bg-black">
-            <div className="h-1 bg-white" style={dart}></div>
           </div>
           <br />
           <p className="font-bold mb-2">PHP (55%)</p>
@@ -339,16 +368,16 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Undergraduate</p>
-          <p className="pb-2 font-bold text-xs">(2019 - Present)</p>
+            <p className="font-bold text-xl">Graduate</p>
+            <p className="pb-2 font-bold text-xs">(2019 - 2023)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-            Doing Bachelor of Technolohy in Computer Science & Engineering
-            branch from Sagar Institute of Science, Technology & Research
-            (SISTec-R), Bhopal with{" "}
-            <span className="font-bold">(9.17 SGPA).</span>
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Done Bachelor of Technolohy in Computer Science & Engineering
+              branch from Sagar Institute of Science, Technology & Research
+              (SISTec-R), Bhopal with{" "}
+              <span className="font-bold">(9.17 SGPA).</span>
+            </p>
           </div>
         </div>
         <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
@@ -361,15 +390,15 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">12<sup>th</sup> Standard</p>
-          <p className="pb-2 font-bold text-xs">(2018 - 2019)</p>
+            <p className="font-bold text-xl">12<sup>th</sup> Standard</p>
+            <p className="pb-2 font-bold text-xs">(2018 - 2019)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-            Done my Higher Secondary Education from C.L. Arya Science Higher
-            Secondary School, M.P. with{" "}
-            <span className="font-bold">(85.6%).</span>
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Done my Higher Secondary Education from C.L. Arya Science Higher
+              Secondary School, M.P. with{" "}
+              <span className="font-bold">(85.6%).</span>
+            </p>
           </div>
         </div>
         <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
@@ -382,14 +411,14 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">10<sup>th</sup> Standard</p>
-          <p className="pb-2 font-bold text-xs">(2016 - 2017)</p>
+            <p className="font-bold text-xl">10<sup>th</sup> Standard</p>
+            <p className="pb-2 font-bold text-xs">(2016 - 2017)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          Done my Higher Education from Oriental Public Higher Secondary
-            School, M.P. with <span className="font-bold">(88.83%).</span>
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Done my Higher Education from Oriental Public Higher Secondary
+              School, M.P. with <span className="font-bold">(88.83%).</span>
+            </p>
           </div>
         </div>
       </div>
@@ -404,7 +433,7 @@ function App() {
         <div className="flex text-center mb-14 relative landing">
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-            <img style={{height: "180px", width: "1000px"}}
+              <img style={{ height: "180px", width: "1000px" }}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={portfolio}
                 alt=""
@@ -424,7 +453,7 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-              <img style={{height: "180px", width: "1000px"}}
+              <img style={{ height: "180px", width: "1000px" }}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={criminal}
                 alt=""
@@ -446,7 +475,7 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-            <img style={{height: "180px", width: "1000px"}}
+              <img style={{ height: "180px", width: "1000px" }}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={visit}
                 alt=""
@@ -469,17 +498,17 @@ function App() {
         <div className="flex text-center mb-10 relative landing">
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-            <img style={{height: "180px", width: "1000px"}}
+              <img style={{ height: "180px", width: "1000px" }}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={delivery}
                 alt=""
               />
             </div>
             <div className="gov absolute top-0 left-0 bg-black h-full lg:h-[180px] lg:w-[358px] m-2 flex flex-col opacity-90 invisible">
-              <p className="text-2xl font-bold">FlavourSome</p>
+              <p className="text-2xl font-bold">School Entry Gate Pass</p>
               <p className="text-m px-6">
-                Online Food Delivery web application made using Django(Python),
-                HTML, CSS, JS
+              Developed an app for school entry management where visitors scan a Bar code
+              upon entry, reducing manual entry time by 50%
               </p>
               <p className="text-xs font-bold">
                 <a className="text-blue-600 underline" href="#home">
@@ -490,7 +519,7 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 mb-14 lg:mb-0 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-            <img style={{height: "180px", width: "1000px"}}
+              <img style={{ height: "180px", width: "1000px" }}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={innov}
                 alt=""
@@ -511,7 +540,7 @@ function App() {
           </div>
           <div className="overflow-hidden mx-6 p-2 relative gov-c">
             <div className="gov-img object-cover h-full w-full">
-            <img style={{height: "180px", width: "1000px"}}
+              <img style={{ height: "180px", width: "1000px" }}
                 className="transition duration-300 ease-in-out shadow-black shadow-[0_2px_10px_2px_rgba(0,0,0,0.6)]"
                 src={notes}
                 alt=""
@@ -533,13 +562,13 @@ function App() {
       </div>
       <hr />
       <p
-        id="educ"
+        id="achievement"
         className="text-3xl p-4 pt-14 text-center font-bold bg-gray-700"
       >
         Achievements
       </p>
       <div className="flex bg-gray-700 justify-center edu-main">
-        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+        <div className="educate flex flex-col text-center px-16 pt-8 lg:w-[33vw]">
           <div>
             <img
               className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
@@ -549,17 +578,17 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">SIH - 2022</p>
-          <p className="pb-2 font-bold text-xs">(Finalist)</p>
+            <p className="font-bold text-xl">SIH - 2022</p>
+            <p className="pb-2 font-bold text-xs">(Finalist)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          We are the Runner up in Smart India Hackathon 2022 held by Govt. of
-            India. I was the Team Leader of my Team.
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              We are the Runner up in Smart India Hackathon 2022 held by Govt. of
+              India. I was the Team Leader of my Team.
+            </p>
           </div>
         </div>
-        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+        <div className="educate flex flex-col text-center px-16 pt-8 lg:w-[33vw]">
           <div>
             <img
               className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
@@ -569,17 +598,17 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Sagar Manthan - 2022</p>
-          <p className="pb-2 font-bold text-xs">(Star Performer)</p>
+            <p className="font-bold text-xl">Sagar Manthan - 2022</p>
+            <p className="pb-2 font-bold text-xs">(Star Performer)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          Sagar Manthan 2022 was organised by Training & Placement Team of my
-            college. I won the competition of Star performer of the event.
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Sagar Manthan 2022 was organised by Training & Placement Team of my
+              college. I won the competition of Star performer of the event.
+            </p>
           </div>
         </div>
-        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+        <div className="educate flex flex-col text-center px-16 pt-8 lg:w-[33vw]">
           <div>
             <img
               className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
@@ -589,19 +618,19 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Branch Master - 2022</p>
-          <p className="pb-2 font-bold text-xs">(Winner)</p>
+            <p className="font-bold text-xl">Branch Master - 2022</p>
+            <p className="pb-2 font-bold text-xs">(Winner)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          Branch Master was organused by CSE Department of my college and I
-            won the event.
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Branch Master was organused by CSE Department of my college and I
+              won the event.
+            </p>
           </div>
         </div>
       </div>
       <div className="flex bg-gray-700 justify-center edu-main">
-        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+        <div className="educate flex flex-col text-center px-16 pt-8 lg:py-8 lg:w-[33vw]">
           <div>
             <img
               className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
@@ -611,17 +640,17 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Code Hunt 5.O - 2021</p>
-          <p className="pb-2 font-bold text-xs">(Winner)</p>
+            <p className="font-bold text-xl">Code Hunt 5.O - 2021</p>
+            <p className="pb-2 font-bold text-xs">(Winner)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          Code Hunt 5.O is and inter-college coding competition held by Amity
-            University, U.P. and I secure the 1st position in competition.
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Code Hunt 5.O is and inter-college coding competition held by Amity
+              University, U.P. and I secure the 1st position in competition.
+            </p>
           </div>
         </div>
-        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+        <div className="educate flex flex-col text-center px-16 pt-8 lg:py-8 lg:w-[33vw]">
           <div>
             <img
               className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
@@ -631,17 +660,17 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Branch Topper - 2023</p>
-          <p className="pb-2 font-bold text-xs">(6th Semester Topper)</p>
+            <p className="font-bold text-xl">Branch Topper - 2023</p>
+            <p className="pb-2 font-bold text-xs">(6th Semester Topper)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          I won the academic excellence award for branch topper of my college
-            in Sixth Semester.
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              I won the academic excellence award for branch topper of my college
+              in Sixth Semester.
+            </p>
           </div>
         </div>
-        <div className="educate flex flex-col text-center px-16 py-16 lg:w-[33vw]">
+        <div className="educate flex flex-col text-center px-16 py-8 lg:w-[33vw]">
           <div>
             <img
               className="h-52 w-[90vw] lg:w-full p-2 shadow-black shadow-[0_10px_15px_5px_rgba(0,0,0,0.6)] hover:shadow-[inset_0_2px_10px_rgba(0,0,0,0.6)]"
@@ -651,14 +680,14 @@ function App() {
           </div>
           <br />
           <div>
-          <p className="font-bold text-xl">Prastuti - 2020</p>
-          <p className="pb-2 font-bold text-xs">(2016 - 2017)</p>
+            <p className="font-bold text-xl">Prastuti - 2020</p>
+            <p className="pb-2 font-bold text-xs">(2020)</p>
           </div>
           <div>
-          <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
-          Prastuti event was a Presentation show and explain competition in
-            which I secure 3rd position.
-          </p>
+            <p className="transition duration-300 ease-in-out invisible d-edu text-xs text-center">
+              Prastuti event was a Presentation show and explain competition in
+              which I secure 3rd position.
+            </p>
           </div>
         </div>
       </div>
